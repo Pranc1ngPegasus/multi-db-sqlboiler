@@ -1,0 +1,10 @@
+dbconfig-1.yaml
+dbconfig-2.yaml
+
+sqlboiler-1.toml
+sqlboiler-2.toml
+
+.env
+.envrc
+
+tmp
