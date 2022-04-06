@@ -1,0 +1,26 @@
+version: "3"
+services:
+  database1:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ${DATABASE1_NAME}
+      POSTGRES_USER: ${DATABASE1_USER}
+      POSTGRES_PASSWORD: ${DATABASE1_PASS}
+      TZ: "Asia/Tokyo"
+    ports:
+      - ${DATABASE1_PORT}:5432
+    restart: always
+    volumes:
+      - ./tmp/primary/data:/var/lib/postgresql/data
+  database2:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ${DATABASE2_NAME}
+      POSTGRES_USER: ${DATABASE2_USER}
+      POSTGRES_PASSWORD: ${DATABASE2_PASS}
+      TZ: "Asia/Tokyo"
+    ports:
+      - ${DATABASE2_PORT}:5432
+    restart: always
+    volumes:
+      - ./tmp/secondary/data:/var/lib/postgresql/data
